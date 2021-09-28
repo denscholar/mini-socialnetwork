@@ -2,6 +2,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { addDoc, collection, doc, getDoc } from "@firebase/firestore";
 import Logo from '../../images/logo.png'
 import '../header/Header.css';
+import Login from '../login/Login';
 import { Link, useHistory } from 'react-router-dom';
 import { Modal, Card, CardContent, Button, TextField, Box } from '@mui/material';
 import { useState, useRef } from "react";
@@ -46,26 +47,29 @@ const Header = ({ user }) => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Container>
-                <Navbar.Brand><img src={Logo} alt="logo" onClick={() => {
-                    history.push('/');
-                }} /></Navbar.Brand>
+                <Navbar.Brand><img src={Logo} alt="logo" onClick={()=> history.push('/')} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav style={{ marginLeft: 'auto' }}>
+                    <Nav style={{ marginLeft: 'auto'}}>
                         {user && (
                             <>
-                                <Button onClick={createPost}>Add Post</Button>
-                                <Button onClick={() => signOut(auth)}>Logout</Button>
+                                <Button style={{
+                                    backgroundColor: 'red',
+                                    color: 'white',
+                                    fontWeight: 'bold',
+                                    width: '100px',
+                                }} onClick={createPost}>Add Post</Button>
+                                <Button style={{
+                                    color: 'white',
+                                    width: '100px'
+                                }} onClick={() => signOut(auth)}>Logout</Button>
                             </>
                         )}
                         {!user && (
                             <>
-                                <Button onClick={() => { history.push("/login") }}>
-                                    Login
-                                </Button>
-                                <Button onClick={() => { history.push("/signup") }}>
-                                    Signup
-                                </Button>
+                                <Link to='/'>Home</Link>
+                                <Link to='/login' >Login</Link>
+                                <Link to='/signup'>Signup</Link>
                             </>
                         )}
                         <Modal style={{ display: 'flex', justifyContent: 'center', paddingTop: '15em' }} open={open} onClose={() => setOpen(false)}

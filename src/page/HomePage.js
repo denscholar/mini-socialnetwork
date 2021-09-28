@@ -1,15 +1,15 @@
+import Posts from "../components/posts/Posts"
 import { Switch, Route } from 'react-router-dom';
-// import Home from '../posts/Home'
-import Login from '../login/Login'
-import Signup from '../signup/Signup'
+import Login from "../components/login/Login";
+import Signup from "../components/signup/Signup";
 
 
-const Content = () => {
+const HomePage = () => {
     return (
         <div>
             <Switch>
                 <Route exact path='/'>
-                    {/* <Home /> */}
+                    <Posts />
                 </Route>
                 <Route path='/login'>
                     <Login />
@@ -22,4 +22,4 @@ const Content = () => {
     )
 }
 
-export default Content
+export default HomePage

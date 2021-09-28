@@ -6,7 +6,12 @@ img {
 Nav a {
   text-decoration: none;
   padding: 10px;
-  font-size: 18px;
+  font-size: 17px;
+  color: white;
+  text-transform: uppercase;
+}
+
+Nav a:hover{
   color: white;
 }
 
