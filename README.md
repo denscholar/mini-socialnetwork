@@ -41,7 +41,7 @@ Below are the following contributors to this project for the time being:
 1. Dennis Akagha
 
 ## Demo link
-LinkedIn: [Demo](https://mini-social-network-app.herokuapp.com/)
+[Demo](https://mini-social-network-app.herokuapp.com/)
 
 ## License
 This project is [MIT](https://github.com/microverseinc/readme-template/blob/master/MIT.md) licensed.
